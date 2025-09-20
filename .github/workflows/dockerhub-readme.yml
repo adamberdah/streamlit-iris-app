@@ -1,0 +1,21 @@
+name: Sync Docker Hub README
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "README.md"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update Docker Hub description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/streamlit-iris-app
+          short-description: "Streamlit Iris app with tests, CI, and Docker"
+          readme-filepath: ./README.md
