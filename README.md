@@ -181,3 +181,21 @@ Port already in use
 
 Run on a different host port:
 docker run --rm -p 8502:8501 streamlit-iris-app:latest
+
+## 📝 Final Submission Checklist
+
+### ✅ Required (for grading)
+- Public GitHub repo link in submission (example:  
+  `https://github.com/adamberdah/streamlit-iris-app`)
+- `README.md` with:
+  - Local run instructions (venv + `streamlit run`)
+  - Tests instructions (`pytest`)
+  - Docker build/run instructions
+  - (If using) Docker Hub pull/run instructions
+- Unit tests implemented (`pytest`) and **passing in CI**
+- GitHub Actions CI workflow (`.github/workflows/ci.yml`) runs tests automatically
+- `Dockerfile` builds and runs locally
+- (If requested in assignment) Docker image pushed to a public registry (Docker Hub)  
+  Example pull:  
+  ```bash
+  docker pull adamberdah/streamlit-iris-app:latest

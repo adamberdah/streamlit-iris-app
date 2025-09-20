@@ -27,5 +27,10 @@ ENV PYTHONPATH=/app
 ENV PORT=8501
 EXPOSE 8501
 
+# Healthcheck
+HEALTHCHECK CMD python -c "import urllib.request as u; u.urlopen('http://localhost:8501/_stcore/health').read()" || exit 1
+
 # Run Streamlit
 CMD ["streamlit", "run", "app/main.py", "--server.address=0.0.0.0", "--server.port=8501"]
+
+
