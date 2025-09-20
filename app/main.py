@@ -1,3 +1,10 @@
+# --- bootstrap sys.path so 'app' package is importable ---
+import os, sys
+ROOT = os.path.dirname(os.path.dirname(__file__))  # project root
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
+# ---------------------------------------------------------
+
 import streamlit as st
 import pandas as pd
 from app.data import load_data
