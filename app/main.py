@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
-from .data import load_data
-from .filters import apply_filters
-from .viz import quick_plot
+from app.data import load_data
+from app.filters import apply_filters
+from app.viz import quick_plot
 
 st.set_page_config(page_title="Iris Explorer", page_icon="🌸", layout="wide")
 st.title("Iris Explorer")
